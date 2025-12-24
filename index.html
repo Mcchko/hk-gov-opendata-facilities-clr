@@ -691,7 +691,7 @@
                         map.setView([lat, lng], 15, { animate: true });
 
                         // 顯示詳細信息並滾動到對應位置
-                        highlightFacility(marker.id);
+                        highlightFacility(marker.options.id);
                     });
 
                     markersLayer.addLayer(marker);
@@ -975,7 +975,7 @@
 
             // 在地圖上高亮對應的標記
             markersLayer.eachLayer(layer => {
-                if (layer.id === facilityId) {
+                if (layer.options.id === facilityId) {
                     if (selectedMarker && selectedMarker !== layer) {
                         selectedMarker.setIcon(L.divIcon({
                             className: 'facility-marker',
